@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 """Section 2.2.4: Number-theoretic transform.
 
 Illustrates the cyclic and negacyclic number-theoretic transform.
@@ -412,7 +412,7 @@ if __name__ == "__main__":
     rc = 0
 
     # plain NTT (no reduction)
-    rc |= testcase_ntt(n=4, q=29)
+    rc |= testcase_ntt(n=256, q=3329)
     rc |= testcase_ntt(n=256, q=3067, printPoly=False)
 
     # cyclic NTT (mod x^n-1)
@@ -420,7 +420,7 @@ if __name__ == "__main__":
     rc |= testcase_cyclic_ntt(n=256, q=3329, printPoly=False)
 
     # negacyclic NTT (mod x^n+1)
-    rc |= testcase_negacyclic_ntt(n=8, q=17)
+    rc |= testcase_negacyclic_ntt(n=256, q=3329)
     rc |= testcase_negacyclic_ntt(n=256, q=7681, printPoly=False)
 
     if rc != 0:
